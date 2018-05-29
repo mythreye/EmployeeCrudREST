@@ -1,0 +1,42 @@
+
+<div class="container">
+	<div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+              <table id="mytable" class="table table-bordred table-striped">
+                   <thead>
+                        <th>Employee Id</th>
+                        <th>Employee Name</th>
+                        <th>Email Id</th>
+                        <th>Gender</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Role</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        <th>View Skill</th>
+                        <th>View Skill Master</th>
+
+                   </thead>
+                   <tbody>
+                    <tr *ngFor="let e of myemployees ">
+                        <td>{{e.employee_id}}</td>
+                        <td>{{e.employee_name}}</td>
+                        <td>{{e.email_id}}</td>
+                        <td>{{e.gender}}</td>
+                        <td>{{e.phno}}</td>
+                        <td>{{e.address}}</td>
+                        <td>{{e.role}}</td>
+                        <td><a routerLink="/update/{{e.employee_id}}">Edit</a></td>
+                        <td><input type="button" (click)="onDelete(e)" value="Delete"/></td>      
+                        <td><a routerLink="/skill/{{e.employee_id}}">View Skill</a></td>     
+                        <td><a routerLink="/skillmaster/{{e.employee_id}}">View Skill Master</a></td>                  
+             
+                    </tr>
+    
+                   </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
